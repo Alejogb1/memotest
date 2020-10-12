@@ -1,7 +1,7 @@
 {
   "name": "memotest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Un juego de memotest hecho con HTML, CSS y JavaScript. Cypress.io para los tests.",
   "private": true,
   "scripts": {
     "empezar": "http-server",
@@ -13,10 +13,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.4.1"
+    "bootstrap": "^4.5.0"
   },
   "devDependencies": {
     "cypress": "^3.8.0",
     "npm-run-all": "^4.1.5"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejogb1/memotest.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Alejogb1/memotest/issues"
+  },
+  "homepage": "https://github.com/Alejogb1/memotest#readme"
 }
