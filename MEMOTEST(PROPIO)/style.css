@@ -3,16 +3,20 @@
     height: 25vh;
 }
 .col-juego {
-    background-color: ;
-    border: 2px solid black;
+    border: 1px solid black;
+
 }
-.col-juego:hover {
-    
-}
-.sin-abrir {
-    background-color: aliceblue;
-    transition: opacity ease 0.2s;
+.cuadro {
+    height: 100%;
+    opacity: 0;
     cursor: pointer;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: opacity ease 0.2s;
+}
+
+.completo {
+    background-color: grey;
 }
 #fin-juego {
     display: none;
@@ -26,9 +30,12 @@
 .azul {
     background-color: blue;
 }
-.negrp {
+.negro {
     background-color: black;
 }
 .verde {
     background-color: green;
+}
+.marron {
+    background-color: rgb(104, 53, 24);
 }
