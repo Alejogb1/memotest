@@ -14,9 +14,11 @@
     cursor: pointer;
     transition: opacity ease 0.2s;
 }
-
+#fin-juego {
+    display: none;
+}
 .completo {
-    background-color: grey;
+    background-color: grey !important;
 }
 #fin-juego {
     display: none;

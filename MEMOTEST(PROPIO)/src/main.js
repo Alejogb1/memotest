@@ -1,6 +1,7 @@
 let turnos = 0;
 const $tablero = document.querySelector("#tablero-juego")
 const $cuadros = $tablero.querySelectorAll(".cuadro")
+const $mensajeFinJuego = document.querySelector('#fin-juego');
 let $primerCuadro = null;
 function configurarTurno() {
     let coloresBase = ["rojo", "amarillo", "azul", "negro", "verde"];
@@ -38,11 +39,13 @@ function mostrarCuadro ($cuadro) {
 function ocultarCuadro ($cuadro) {
     setTimeout(function(){
         $cuadro.style.opacity = "0";
-    }, 500)
+    }, 300)
 }
 function eliminarCuadro ($cuadro) {
     setTimeout(() => {
-        $cuadro.classList.add("completo")
+        $cuadro.parentElement.classList.add("completo");
+        $cuadro.remove();
+
     }, 500);
 }
 function manejarClickCuadro($cuadroActual){
@@ -63,8 +66,14 @@ function manejarClickCuadro($cuadroActual){
                     ocultarCuadro($cuadroActual);
                 }
             }
-    
-    
+}
+
+function evaluarFinDeJuego (){
+    if (document.querySelectorAll(".cuadro").length === 0) {
+        $tablero.style.display = "none";
+        $mensajeFinJuego.querySelector("strong").textContent = turnos.toString();
+        $mensajeFinJuego.style.display = "block"
+    }
 }
 
 
