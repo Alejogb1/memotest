@@ -35,6 +35,7 @@ context('Memotest', () => {
 
   describe("resuelve el juego", () => {
     let mapaDePares, listaDePares;
+
     it("elige una combinación errónea", () => {
       cy.get(".cuadro").then((cuadros) => {
         mapaDePares = obtenerParesDeCuadros(cuadros);
@@ -43,8 +44,28 @@ context('Memotest', () => {
         cy.get(listaDePares[0][1].click())
       })
     })
-});
 
+  it("resuelve el juego", () => {
+    cy.get(".cuadro").should("have.length", NUMERO_CUADROS)
+   
+    listaDePares.forEach(par => {
+      cy.get(par[0]).click();
+      cy.get(par[1]).click();
+    });
+
+    cy.get(".cuadro").should("have.length", 0);
+
+    cy.get(".tablero").should("not.be.visible");
+    
+    const numeroTurnos = NUMERO_CUADROS / 2 + 1 // Testeó 1 incorrecto
+
+    cy.get("#fin-juego").
+      should("be.visible").
+      contains(
+        "Fin del juego!"
+      )
+  })
+});
 function obtenerParesDeCuadros (cuadros) {
   const pares = {};
 
