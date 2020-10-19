@@ -39,8 +39,8 @@ context('Memotest', () => {
       cy.get(".cuadro").then((cuadros) => {
         mapaDePares = obtenerParesDeCuadros(cuadros);
         listaDePares = Object.values(mapaDePares)
-
-        console.log(listaDePares)
+        cy.get(listaDePares[0][0].click())
+        cy.get(listaDePares[0][1].click())
       })
     })
 });
